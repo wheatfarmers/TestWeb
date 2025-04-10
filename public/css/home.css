@@ -84,7 +84,7 @@ body{
     text-decoration: none;
     text-transform: capitalize;
 }
-.blogs-section{
+.listings-section{
     width: 100%;
     padding: 50px 5vw;
     display: grid;
@@ -92,7 +92,7 @@ body{
     grid-gap: 80px;
 }
 
-.blog-image{
+.listing-image{
     width: 100%;
     height: 250px;
     object-fit: cover;
@@ -100,7 +100,7 @@ body{
     margin-bottom: 10px;
 }
 
-.blog-overview{
+.listing-overview{
     margin: 10px 0 20px;
     line-height: 30px;
 }

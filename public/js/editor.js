@@ -1,4 +1,4 @@
-const blogTitleField = document.querySelector('.title');
+const listingTitleField = document.querySelector('.title');
 const articleFeild = document.querySelector('.article');
 
 // banner
@@ -48,22 +48,22 @@ const addImage = (imagepath, alt) => {
 let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 publishBtn.addEventListener('click', () => {
-    if(articleFeild.value.length && blogTitleField.value.length){
+    if(articleFeild.value.length && listingTitleField.value.length){
         // generating id
         let letters = 'abcdefghijklmnopqrstuvwxyz';
-        let blogTitle = blogTitleField.value.split(" ").join("-");
+        let listingTitle = listingTitleField.value.split(" ").join("-");
         let id = '';
         for(let i = 0; i < 4; i++){
             id += letters[Math.floor(Math.random() * letters.length)];
         }
 
         // setting up docName
-        let docName = `${blogTitle}-${id}`;
+        let docName = `${listingTitle}-${id}`;
         let date = new Date(); // for published at info
 
         //access firstore with db variable;
-        db.collection("blogs").doc(docName).set({
-            title: blogTitleField.value,
+        db.collection("listings").doc(docName).set({
+            title: listingTitleField.value,
             article: articleFeild.value,
             bannerImage: bannerPath,
             publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`

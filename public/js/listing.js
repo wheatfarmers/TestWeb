@@ -1,24 +1,24 @@
 
-let blogId = decodeURI(location.pathname.split("/").pop());
+let listingId = decodeURI(location.pathname.split("/").pop());
 
-let docRef = db.collection("blogs").doc(blogId);
+let docRef = db.collection("listings").doc(listingId);
 
 docRef.get().then((doc) => {
     if(doc.exists){
-        setupBlog(doc.data());
+        setuplisting(doc.data());
     } else{
         location.replace("/");
     }
 })
-const setupBlog = (data) => {
+const setuplisting = (data) => {
     const banner = document.querySelector('.banner');
-    const blogTitle = document.querySelector('.title');
+    const listingTitle = document.querySelector('.title');
     const titleTag = document.querySelector('title');
     const publish = document.querySelector('.published');
 
     banner.style.backgroundImage = `url(${data.bannerImage})`;
 
-    titleTag.innerHTML += blogTitle.innerHTML = data.title;
+    titleTag.innerHTML += listingTitle.innerHTML = data.title;
     publish.innerHTML += data.publishedAt;
 
     const article = document.querySelector('.article');

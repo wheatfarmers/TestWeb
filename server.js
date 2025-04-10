@@ -37,8 +37,8 @@ app.post('/upload', (req, res) => {
         }
     })
 })
-app.get("/:blog", (req, res) => {
-    res.sendFile(path.join(initial_path, "blog.html"));
+app.get("/:listing", (req, res) => {
+    res.sendFile(path.join(initial_path, "listing.html"));
 })
 
 app.use((req, res) => {
