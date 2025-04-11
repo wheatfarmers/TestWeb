@@ -1,4 +1,3 @@
-import { db } from './firebase.js';
 
 document.addEventListener("DOMContentLoaded", () => {
     const listingTitleField = document.querySelector('.title');
